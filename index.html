@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <link rel="icon" href="img/logo.png">
+    
+<meta charset="UTF-8">
+<title>Joyeria Elite</title>
+<link rel="stylesheet" href="styles.css">
+</head>
+
+<body>
+
+<!-- 🧭 MENÚ -->
+<section id="inicio">
+    <a href="#" onclick="filtrar('todos')">Todos</a>
+    <a href="#" onclick="filtrar('collar')">Collares</a>
+    <a href="#" onclick="filtrar('arete')">Aretas</a>
+    <a href="#" onclick="filtrar('manilla')">Manillas</a>
+    <a href="#" onclick="filtrar('anillo')">Anillos</a>
+</section>
+
+<!-- 🛍 PRODUCTOS -->
+<section id="productos"></section>
+
+<!-- 🛒 CARRITO -->
+<section id="carrito">
+    <h2>Carrito (<span id="contador">0</span>)</h2>
+    <ul id="lista"></ul>
+    <h3>Total: $<span id="total">0</span></h3>
+    <button onclick="vaciar()">Vaciar carrito</button>
+    <button onclick="comprar()">Finalizar compra</button>
+</section>
+
+<!-- 🔍 MODAL -->
+<div id="modal" onclick="cerrarModal()">
+    <img id="imgGrande">
+</div>
+
+<script src="script.js"></script>
+<div id="btnCarrito" onclick="irAlCarrito()">
+    🛒 <span id="contadorFlotante">0</span>
+</div>
+</body>
+</html>
