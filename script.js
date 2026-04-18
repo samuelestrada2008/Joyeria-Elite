@@ -49,10 +49,12 @@ function renderCarrito() {
     lista.innerHTML = "";
 
     let total = 0;
+    let totalItems = 0; // 🔥 NUEVO
 
     carrito.forEach((p, i) => {
         let subtotal = p.precio * p.cantidad;
         total += subtotal;
+        totalItems += p.cantidad; // 🔥 NUEVO
 
         lista.innerHTML += `
         <li>
@@ -64,7 +66,9 @@ function renderCarrito() {
     });
 
     document.getElementById("total").textContent = total;
-    document.getElementById("contador").textContent = carrito.length;
+
+    /* CONTADOR (AHORA CORRECTO) */
+    document.getElementById("contador").textContent = totalItems;
 }
 
 /* 🔄 CAMBIAR */
@@ -144,6 +148,7 @@ function cerrarModal() {
 /* 🚀 INIT */
 cargarProductos();
 renderCarrito();
+
 function irAlCarrito() {
     document.getElementById("carrito").scrollIntoView({
         behavior: "smooth"
